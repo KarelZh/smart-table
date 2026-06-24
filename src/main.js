@@ -61,11 +61,11 @@ const applySearching = initSearching(sampleTable.search.elements, "search");
 
 const applySorting = initSorting([        // Нам нужно передать сюда массив элементов, которые вызывают сортировку, чтобы изменять их визуальное представление
     sampleTable.header.elements.sortByDate,
-    sampleTable.header.elements.sortByTotal
+    sampleTable.header.elements.sortByTotal,
 ]);
 
 const applyFiltering = initFiltering(sampleTable.filter.elements, {    // передаём элементы фильтра
-    searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
+    searchBySeller: indexes.sellers,                               // для элемента с именем searchBySeller устанавливаем массив продавцов
 });
 
 const applyPagination = initPagination(

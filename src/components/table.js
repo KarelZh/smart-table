@@ -13,15 +13,19 @@ export function initTable(settings, onAction) {
 
     // @todo: #1.2 —  вывести дополнительные шаблоны до и после таблицы
 
-    after.forEach((item) => {
-        root[item] = cloneTemplate(item);
-        root.container.append(root[item].container);
-    });
+    if (before && Array.isArray(before)) {
+        before.reverse().forEach(subName => {
+            root[subName] = cloneTemplate(subName);
+            root.container.prepend(root[subName].container);
+        });
+    }
 
-    before.reverse().forEach((item) => {
-        root[item] = cloneTemplate(item);
-        root.container.prepend(root[item].container);
-    })
+    if (after && Array.isArray(after)) {
+        after.forEach(subName => {
+            root[subName] = cloneTemplate(subName);
+            root.container.append(root[subName].container);
+        });
+    }
 
     // @todo: #1.3 —  обработать события и вызвать onAction()
 

@@ -12,7 +12,15 @@ export function initFiltering(elements) {
 
     const applyFiltering = (query, state, action) => {
         // код с обработкой очистки поля
-         
+        if (action?.name === 'clear') {
+            const fieldName = action.dataset.field;
+
+            Object.values(elements).forEach((element) => {
+                if (element?.name === fieldName) {
+                    element.value = '';
+                }
+            });
+        }
 
         // @todo: #4.5 — отфильтровать данные, используя компаратор
         const filter = {};

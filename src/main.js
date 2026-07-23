@@ -82,7 +82,7 @@ const {applyPagination, updatePagination} = initPagination(
 
 const applySearching = initSearching(sampleTable.search.elements, "search");
 
-const {applyFiltering, updateIndexes} = initFiltering(sampleTable.filter.elements, "filter");
+const {applyFiltering, updateIndexes} = initFiltering(sampleTable.filter.elements);
 
 const applySorting = initSorting([
   sampleTable.header.elements.sortByDate,
